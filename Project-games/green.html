@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>green screen</title>
+</head>
+<style type="text/css">
+	canvas
+	{
+		width: 300px;
+		border: 1px solid #c3c3c3;
+	}
+</style>
+<script type="text/javascript" src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js.">
+	var fgimage=null;
+	var bgimage=null;
+	function loadfgimage()
+	{
+		var imgFile=document.getElementById("fgfile")
+		fgfile=new SimpleImage(imgFile);
+		var canvas=getElementById("fgcan");
+		fgimage.drawTo(canvas); 
+	}
+	function loadbgimage()
+	{
+		var imgFile1=document.getElementById("bgfile")
+		bgfile=new SimpleImage(imgFile1);
+		var canvas1=getElementById("bgcan");
+		bgimage.drawTo(canvas1); 
+	}
+	function greenScreen()
+	{
+		if (fgimage==null || !fgimage.complete()) 
+		{
+			alert("Foreground not loaded.");
+			return;
+		}
+		if (bgimage==null || !bgimage.complete()) 
+		{
+			alert("Background not loaded.");
+			return;
+		}
+		clearCanvas();
+	}
+</script>
+<body>
+	<canvas id="fgcan"></canvas>
+	<canvas id="bgcan"></canvas> </br>
+	<p>Foreground: <input type="file" multiple="false" accept="image/*" id="fgfile" onchange="loadfgimage()">
+	Background: <input type="file" multiple="false" accept="image/*" id="bgfile" onchange="loadbgimage()"> </p>
+</body>
+</html>

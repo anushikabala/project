@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHECKBOX GAME</title>
+	<link rel="stylesheet" href="checkBox.css">
+	<script src="checkBox.js"></script>
+</head>
+<body>
+	<div id="some_div"></div>
+	<center>Test your skill.  How many boxes can you check in 20 seconds?</center>	
+	<script LANGUAGE="JavaScript">
+	
+	document.write("<FORM><CENTER>")
+	document.write('<INPUT TYPE="text" VALUE="0" NAME="num" ');
+	document.write('SIZE=10 onFocus="this.blur()"><BR>')
+	document.write("<HR SIZE=1 WIDTH=40%>")
+	for (var i = 0; i < 10; ++i) {
+		for (var j = 0; j < 10; ++j) {
+			document.write('<INPUT TYPE="checkbox" onClick="display(this)">')}
+		document.write("<BR>")}
+		document.write("<HR SIZE=1 WIDTH=40%>")
+		document.write('<INPUT TYPE="button" VALUE="restart" ');
+		document.write('onClick="restart(this.form)">')
+		document.write("</CENTER></FORM>")
+
+		//timer
+		var timeLeft = 20;
+		var elem = document.getElementById('some_div');
+		var timerId = setInterval(countdown, 1000);
+
+		function countdown() {
+    		if (timeLeft == -1) {
+       	 		clearTimeout(timerId);
+        		doSomething();
+    		} 
+    		else {
+        	elem.innerHTML = timeLeft + ' seconds remaining';
+        	timeLeft--;
+    		}
+		}	
+		
+</script>
+	<button onClick="exit()">Exit </button>
+</body>
+</html>

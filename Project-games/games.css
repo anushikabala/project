@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(32, 32, 32);
+    background-image: linear-gradient(black,grey);
+    color: rgb(230, 230, 230);
+    text-align: center;
+    font-family: 'Indie Flower', 'Comic Sans', cursive;
+}
+.card
+{
+	border-radius: 18px;
+	box-shadow: 5px 5px 5px white;
+	font-family: 'Indie Flower', 'Comic Sans', cursive;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+	background: linear-gradient(transparent,#080808);
+	border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover
+{
+	background: linear-gradient(transparent,#280000);
+}
